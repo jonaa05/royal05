@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Wood Works</title>
+    <link rel="stylesheet" href="my web.css">
+    <script>
+        // Function to toggle the menu when the hamburger icon is clicked
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+
+        // Function to close the menu when any link is clicked
+        function closeMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.remove("active");
+        }
+
+        // Function to close the menu when clicking outside of it
+        function clickOutsideMenu(event) {
+            var menu = document.getElementById("menu");
+            var menuIcon = document.querySelector(".menu-icon");
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.classList.remove("active");
+            }
+        }
+
+        // Adding the event listener for clicks outside the menu
+        document.addEventListener("click", clickOutsideMenu);
+
+        // Function to display product categories
+        function showCategory(category) {
+            const doors = document.getElementById("doors");
+            const walldecor = document.getElementById("walldecor");
+            const beds = document.getElementById("beds");
+
+            // Hide all categories
+            doors.style.display = "none";
+            walldecor.style.display = "none";
+            beds.style.display = "none";
+
+            // Show selected category
+            if (category === "doors") {
+                doors.style.display = "grid";
+            } else if (category === "walldecor") {
+                walldecor.style.display = "grid";
+            } else if (category === "beds") {
+                beds.style.display = "grid";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">
+            <img src="image/code 02.jpg" alt="Royal Wood Works Logo"> <!-- Replace with your logo image -->
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+        <ul id="menu">
+            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#products" onclick="closeMenu()">Products</a></li>
+            <li><a href="#contact-us" onclick="closeMenu()">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page Section -->
+    <section id="home">
+        <h1>Royal Wood Works</h1>
+        <p>Find the perfect furniture for your home.</p>
+        <p>Located in Kolasib, Mizoram Pin - 796081</p>
+    </section>
+
+    <!-- Products Page Section -->
+    <section id="products">
+        <h2>Our Products</h2>
+
+        <!-- Category Buttons to Show Categories -->
+        <div class="product-categories">
+            <button class="category" onclick="showCategory('doors')">Doors</button>
+            <button class="category" onclick="showCategory('walldecor')">Wall Decor</button>
+            <button class="category" onclick="showCategory('beds')">Beds</button>
+        </div>
+
+        <div id="product-list">
+            <!-- Doors Category -->
+            <div class="product-category" id="doors" style="display: none;">
+                <h3>Doors</h3>
+                <div class="product">
+                    <img src="image/code01.jpg" alt="Solid Teak Door">
+                    <h4>Solid Teak Door</h4>
+                    <p>Price: Rs 12,000</p>
+                    <p>Size: 78x32, Frame: 32mm one-side design without polish.</p>
+                    <a href="https://wa.me/919009402306" target="_blank" class="contact-link">Contact here</a>
+                </div>
+                <!-- Add more door products here -->
+            </div>
+
+            <!-- Wall Decor Category -->
+            <div class="product-category" id="walldecor" style="display: none;">
+                <h3>Wall Decor</h3>
+                <div class="product">
+                    <img src="image/walldecor.jpg" alt="Wooden Wall Frame">
+                    <h4>Wooden Wall Frame</h4>
+                    <p>Price: Rs 6,000</p>
+                    <p>High-quality wood wall frame, perfect for living rooms.</p>
+                    <a href="https://wa.me/919009402306" target="_blank" class="contact-link">Contact here</a>
+                </div>
+                <!-- Add more wall decor products here -->
+            </div>
+
+            <!-- Beds Category -->
+            <div class="product-category" id="beds" style="display: none;">
+                <h3>Beds</h3>
+                <div class="product">
+                    <img src="image/bed.jpg" alt="Teak Wood Bed">
+                    <h4>Teak Wood Bed</h4>
+                    <p>Price: Rs 20,000</p>
+                    <p>Size: King Size. Crafted with premium teak wood.</p>
+                    <a href="https://wa.me/919009402306" target="_blank" class="contact-link">Contact here</a>
+                </div>
+                <!-- Add more bed products here -->
+            </div>
+
+            <!-- Most Viewed Products -->
+            <div class="product-category" id="most-viewed">
+                <h3>Most Viewed Products</h3>
+                <div class="product">
+                    <img src="image/code02.jpg" alt="Luxury Oak Door">
+                    <h4>Luxury Oak Door</h4>
+                    <p>Price: Rs 15,000</p>
+                    <p>Size: 80x36, Frame: 35mm one-side design with light polish.</p>
+                    <a href="https://wa.me/919009402306" target="_blank" class="contact-link">Contact here</a>
+                </div>
+                <div class="product">
+                    <img src="image/walldecor2.jpg" alt="Rustic Wall Art">
+                    <h4>Rustic Wall Art</h4>
+                    <p>Price: Rs 4,500</p>
+                    <p>Handcrafted rustic wood art to enhance your home décor.</p>
+                    <a href="https://wa.me/919009402306" target="_blank" class="contact-link">Contact here</a>
+                </div>
+                <div class="product">
+                    <img src="image/bed2.jpg" alt="Luxury Oak Bed">
+                    <h4>Luxury Oak Bed</h4>
+                    <p>Price: Rs 25,000</p>
+                    <p>Size: Queen Size. Made with finest quality oak wood.</p>
+                    <a href="https://wa.me/919009402306" target="_blank" class="contact-link">Contact here</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- WhatsApp Link -->
+        <div class="whatsapp-link">
+            <p>Have questions or want to make a purchase? Contact us on WhatsApp!</p>
+            <a href="https://wa.me/916009402306" target="_blank">Chat with us on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+        <p>For inquiries, please reach out to us at:</p>
+        <p>Email: info@royalwoodworks.com</p>
+        <p>Phone: +91 60094 02306</p>
+        <p>Visit us at: Kolasib, Mizoram Pin - 796081</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Royal Wood Works. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
